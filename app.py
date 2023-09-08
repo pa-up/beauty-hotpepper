@@ -14,15 +14,9 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
 
 
-# このアプリフォルダの絶対パスを取得
-this_file_abspath = os.path.abspath(sys.argv[0])
-last_slash_index = this_file_abspath.rfind('/')  # 最後の '/' のインデックスを取得
-this_app_root_abspath = this_file_abspath[:last_slash_index]
-
 # flaskアプリの明示
-templates_path = os.path.join(this_app_root_abspath, 'templates')
-static_path = os.path.join(this_app_root_abspath, 'static')
-app = Flask(__name__ , template_folder=templates_path, static_folder=static_path)
+static_path = "./static"
+app = Flask(__name__)
 
 # パスの定義
 img_path_from_static = "img/"
